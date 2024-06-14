@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mis Recetas</title>
+        <script src="script.js"></script>
+    </head>
+    <body onload="LeerLocalstorage()">
+        <h3>Nombre de la receta:</h3>
+        <input id="nombreReceta" type="text"></input>
+        <br>
+        <br>
+        <span><strong>Ingredientes</strong>
+            <br><input id="nombreIngrediente" type="text"></input></span>
+        <br>
+        <h3>Preparación.</h3>
+        <textarea id="preparacionReceta" name="textarea" rows="5" cols="20"></textarea>
+        <br>
+        <br>
+        <span>Cantidad: </span><input id="cantidadIngrediente" type="text"></input></span>
+        <br>
+        <h3>receta:</h3>
+        <div id="listaRecetas"></div>
+
+        <br>
+        <button type="button" onclick="AgregarReceta()">Agregar</button>
+        <button type="button" onclick="EliminarReceta()">Eliminar</button>
+        
+
+    </body>
+</html>

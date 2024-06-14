@@ -1,0 +1,23 @@
+{
+    "nombre": "Yineth Rivera Guerrero",
+    "edad": 21,
+    "email": "karinariv0311@gmail.com",
+    "lugares frecuentes": [
+        {
+            "Lugar": "Pueblo",
+            "dirección": "Rosas"
+        
+        },
+        {
+            "Lugar": "Oficina",
+            "dirección": "edificio navarra ayté"
+        },
+        {
+            "lugar": "Parque Caldas",
+            "dirección": "centro"
+
+        }
+       
+    ]
+      
+}

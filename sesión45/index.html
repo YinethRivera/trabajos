@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(https://media.istockphoto.com/id/1464800958/es/vector/pegatinas-de-colecci%C3%B3n-linda-oveja-enamorada-con-corazones-carta-de-amor-y-globos.jpg?s=612x612&w=0&k=20&c=KpBa_3qjRBNpWXJOcPGhz93nJnOUextCLuJi5dD-cEk=);
+         
+        }
+        button{
+           
+            background:rgb(82, 221, 93) ;
+        }
+        ::placeholder{
+            background-image: url(https://www.shutterstock.com/image-vector/charming-sheeps-lambs-different-emotions-260nw-2140069073.jpg);
+        }
+    </style>
+</head>
+<body >
+    <h1>Modulos</h1>
+    <div>
+        <input id="number1" type="number" placeholder="ingresa un numero">
+        <span id="operador">?</span>
+        <input id="number2" type="number" placeholder="ingresa un numero"> 
+        <span>=</span>
+        <span id="result">resultado</span>
+    </div>
+    <div> </div>
+         <button type="button" onclick="calcular('sumar')">sumar</button>
+         <button type="button" onclick="calcular('restar')">restar</button>
+         <button type="button" onclick="calcular('multiplicar')">multiplicar</button>
+         <button type="button" onclick="calcular('dividir')">dividir</button>
+         <button type="button" onclick="calcular('potencia')">potencia</button>
+         <button type="button" onclick="calcular('raiz')">raiz</button>
+
+    </div>
+
+    <h1>Modulos</h1>
+    <div>
+        <input id="number" type="number" placeholder="ingresa un numero"> 
+        <span id="operador2">?</span>
+        <span>=</span>
+        <span id="result2">resultado</span>
+    </div>
+    <div> </div>
+        
+         <button type="button" onclick="operaciones2('redondear')">redondear</button>
+         <button type="button" onclick="operaciones2('valor')">valor</button>
+
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>

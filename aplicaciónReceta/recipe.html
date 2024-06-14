@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Recetas</title>
+</head>
+
+<body>
+    
+    <div class="agregarRecetas">
+        <h2>LAS MEJORES RECETAS</h2>
+        <form id="formaReceta">
+            <label for="nombreReceta">Nombre de la receta:</label>
+            <br>
+            <input type="text" id="nombreReceta" placeholder="¿Que receta vas a agregar?" required>
+            <br>
+            <br>
+            <div class="listaIngredientes">
+                <div class="ingredientes">
+                    <input type="text" class="nombreIngrediente" placeholder="Ingrediente" required>
+                    <input type="text" class="cantidadIngrediente" placeholder="Cantidad" required>
+                </div>
+            </div>
+            <br>
+            <br>
+            <label for="preparacionReceta" id="preparacion">Preparación:</label>
+            <br>
+            <input type="text" id="preparacionReceta" placeholder="escribe paso a paso" required>
+            <br>
+            <button type="button" id="agregarIngrediente">Agregar más Ingredientes</button>
+            <button type="submit">Guardar mi Receta</button>
+
+
+        </form>
+        <hr>
+        <div id="recipe-list"></div>
+    </div>
+    <script src="recipe.js"></script>
+</body>
+
+</html>

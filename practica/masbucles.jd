@@ -1,0 +1,27 @@
+let library = [
+    { title: "Cien años de soledad", author: "Gabriel García Márquez", year: 1967 },
+    { title: "1984", author: "George Orwell", year: 1949 },
+    { title: "Don Quijote de la Mancha", author: "Miguel de Cervantes", year: 1605 },
+    { title: "La Odisea", author: "Homero", year: -800 } 
+];
+let opcion=prompt('si desea buscar libro por autor ingresa 1 y si lo desea por año ingresar 2, o si deseas ver todos los libros de la biblioteca ingresa 3: ')
+if(opcion==='1') {
+    let autor= prompt('Ingresar nombre de autor: ');
+    for(let i =0; i < library.length; i++){
+        if ( autor === library[i].author){
+            console.log('Libro disponible: '   +  library[i].title + ' Autor: ' + library[i].author  + ' Año: ' + library[i].year)
+        }
+    }
+} else if(opcion==='2'){
+     let año= parseInt(prompt('Ingresar el año que deseas buscar: '));
+    for(let i =0; i < library.length; i++){
+        if ( año === library[i].year){
+            console.log('Libro disponible: '   +  library[i].title + ' autor: ' + library[i].author  + ' Año: ' + library[i].year)
+        }
+    }
+} else if(opcion==='3'){
+    for(let i =0; i < library.length; i++){
+            console.log('Libro disponible: '   +  library[i].title + ' autor: ' + library[i].author  + ' Año: ' + library[i].year)
+    
+        }
+    }

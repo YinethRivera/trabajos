@@ -1,0 +1,32 @@
+#imagenyeka {
+    background-image: url("miMarca.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vw;
+    width: 130vw;
+
+}
+body, html{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.navegador {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(237, 195, 248)
+}
+.navegador a {
+
+    color: rgb(65, 6, 80);
+    padding: 20px 7px;
+    text-decoration: none;
+}
+.navegador a:hover {
+
+    background-color: rgb(220, 147, 223);
+}
