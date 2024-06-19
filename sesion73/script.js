@@ -45,7 +45,7 @@ function MostrarTareas() {
   });
 }
 document.addEventListener('DOMContentLoaded', MostrarTareas())
-function mostrarRojo (nue|vaTarea){
+function mostrarRojo (nuevaTarea){
   nuevaTarea.classList.add('incompleta')
   nuevaTarea.classList.remove('completa')
 nuevaTarea.addEventListener('click', () => {
