@@ -1,0 +1,33 @@
+body {
+    font-family: cursive;
+    text-align: center;
+    background-image: url(https://marketplace.canva.com/EAFYOD2NCw4/1/0/1600w/canva-fondo-de-pantalla-ilustrado-retro-rosado-N4o2b7lr0cU.jpg); */
+  }
+  h1 {
+    color: #801a80;
+  }
+  .Agregar {
+    padding: 8px 16px;
+    background-color: #daa6d5;
+    color: rgb(0, 0, 0);
+    border: none;
+  }
+  .seleccionar button:hover {
+    background-color: #801a80;
+    cursor: pointer;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    color: black
+  }
+  li {
+    cursor: pointer;
+  }
+  p {
+    color: rgb(46, 4, 56);
+  }
+  .listaTareas {
+    color: black;
+  
+  }
