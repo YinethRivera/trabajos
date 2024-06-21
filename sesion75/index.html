@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Encuentra el numero en la pocicion</h2>
+
+<p>Escribe  el numero de la pocicion que deseas conocer </p>
+
+<input id="prueba" type="text">
+<button type="button" onclick="pocicion()">buscar</button>
+
+<p id="mensaje"></p>
+
+<script>
+    let numeros = [1,2,3,4,5,6,7,8,9,10];
+   function pocicion() {
+    const mensaje = document.getElementById("mensaje");
+    mensaje.innerHTML =""
+    const indice = document.getElementById("prueba").value;
+
+    try { 
+        if (indice.trim() == "")throw "Escribe un numero"
+        if (isNaN(indice)) throw "No es un numero"
+        if (indice < 1) throw"muy bajo."
+        if (indice > 11) throw"muy alto."
+        mensaje.innerHTML = 'el numero que hay en esa posicion es: '+numeros[indice ]
+    }
+    catch(error) {
+    mensaje.innerHTML = "error " + error
+    }
+    finally {
+        document.getElementById("prueba").value = "";
+    }
+}
+
+</script>
+
+</body>
+</html>
