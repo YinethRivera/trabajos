@@ -34,7 +34,3 @@ async function funcionAsync(){
 
 funcionAsync()
 
-
-
-
-

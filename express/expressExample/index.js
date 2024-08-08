@@ -40,16 +40,16 @@ console.log(uptimeOS);
 });
 
 app.get("/totalmem", (req, res) => {
-const totalMemory = os.totalmem();
+   const totalMemory = os.totalmem(); /*no me funciona*/
 
 console.log(totalMemory);
   res.send(totalMemory);
 });
 
 app.get("/cpus", (req, res) => {
-const cpusCoreLogic = os.cpus();
+  const cpusCoreLogic = os.cpus();
 
-console.log(cpusCoreLogic);
+  console.log(cpusCoreLogic);
   res.send(cpusCoreLogic);
 });
 

@@ -55,7 +55,7 @@ const production_house = [
   { id: 111, production_house: "J. C. Staff" },
 ];
 
-const anime = [
+const data = [
   {
     id: 101,
     name: "Shingeki no Kyojin",

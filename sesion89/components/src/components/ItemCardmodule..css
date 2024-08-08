@@ -1,0 +1,13 @@
+.itemCard{
+    width: 250px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    color: gray;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.itemCardImage{
+    width: 100%;
+    border-radius: 8px;
+}

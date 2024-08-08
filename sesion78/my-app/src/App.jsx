@@ -1,125 +1,128 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import ayte from "/ayte_1 (1).svg";
-import "./App.css";
-import Profile from "./components/profile";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import ayteLogo from '/ayte_1.svg'
+import Profile from './components/Profile'
+import './App.css'
+import ListPeople from './components/ListPeople'
 
-function getRamdomPerson(customArray) {
-  const ramdonIndex = Math.floor(Math.random() * customArray.length)
 
-  return customArray[ramdonIndex].name
-}
-
-function App() {
-  const [count, setCount] = useState(0);
-  const [persona, setPersona] = useState('Maria');
-
-  const sebastian = {
+const sebastian = {
   name: 'sebastian',
   lastName: 'Quinayas',
   age: '21'
 }
 
+const students = [
+  {
+    name: 'Sebastian',
+    img: 'https://images.generated.photos/3ihy_0Px4_i3QIX1C7CKhwoyVMBGYgWo6BapiWPutEQ/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NjA3NjM2LmpwZw.jpg',
+    telephone: '31154684',
+    address: 'Cra 34 # 78 80',
+    age: 22
+  },
+  {
+    name: 'Nicol',
+    img: 'https://images.generated.photos/w6sm_W9-P4L6uq4PZgbWbRAjpMs4i20zFhTR7OdZvwY/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDU4MjI1LmpwZw.jpg',
+    telephone: '3215447898',
+    age: 17
+  },
+  {
+    name: 'Yineth',
+    img: 'https://images.generated.photos/I-8vtUEQuFUEGufmOWkf6j5RvJNZ1L1EwBvEJkCMWxQ/rs:fit:512:512/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjE3ODcyLmpwZw.jpg',
+    telephone: '31245635',
+    age: 21
+  },
+  {
+    name: 'María',
+    img: 'https://images.generated.photos/M9OYXAyCE4n45d0URzVlI5QjzPFynMbbLC-YNi5UTfY/rs:fit:512:512/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODY2NjU5LmpwZw.jpg',
+    telephone: '3238791544',
+    address: '123 Main St',
+    age: 21
+  },
+  {
+    name: 'Eider',
+    img: 'https://images.generated.photos/qtM6F5RVs4lrwunkkwHMUltMvB-mcSqh9hpgL6ydf60/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTAxMTgzLmpwZw.jpg',
+    telephone: '321544894',
+    age: 17
+  },
+  {
+    name: 'Cristhian',
+    img: 'https://images.generated.photos/rLxFEbpzs8d8VDNZ5Gob57cTXEYkCGpht5tnd9xRT7M/rs:fit:512:512/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTU1NzcxLmpwZw.jpg',
+    telephone: '321789684',
+    age: 23
+  },
+]
 
-  const students = [
-    {
-      name: "yineth",
-      img: "https://pm1.aminoapps.com/6264/457f17862f0d98a2c107e6dbe3b67e06c606d113_00.jpg",
-      telephone: "3107162679",
-      address: "cra5 #25B5",
-      age: "21",
-    },
-    {
-      name: "Maria",
-      img: "https://i.pinimg.com/564x/8f/bf/f6/8fbff66bfd8ca61c67ace308550800d8.jpg",
-      telephone: "3107162676",
-      address: "cra3 #A23",
-      age: "20",
-    },
-    {
-      name: "Andres",
-      img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Andres_Bello-Quinsac.jpg",
-      telephone: "3107762679",
-      address: "cra 8 #30A27",
-      age: "23",
-    },
-    {
-      name: "Jhon",
-      img: "https://i.blogs.es/53190a/ts-1/450_1000.jpg",
-      telephone: "3103162671",
-      address: "cra5 #4A3",
-      age: "22",
-    },
-    {
-      name: "nicole",
-      img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cf4c6c23-e340-45da-abcf-c2d373f1eb5a/dcz9m24-fa8cb481-42ef-4cd6-8810-6927c88cad87.png/v1/fill/w_736,h_1086/kid_nicole_watterson_by_nickon775_dcz9m24-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzMwMyIsInBhdGgiOiJcL2ZcL2NmNGM2YzIzLWUzNDAtNDVkYS1hYmNmLWMyZDM3M2YxZWI1YVwvZGN6OW0yNC1mYThjYjQ4MS00MmVmLTRjZDYtODgxMC02OTI3Yzg4Y2FkODcucG5nIiwid2lkdGgiOiI8PTIyMzkifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.cnzYz_iXvLdldff2LHc_hLO6ngwI3EBTic6xxxbghrw",
-      telephone: "3103162671",
-      address: "cra5 #4A3",
-      age: "22",
-    },
-    {
-      name: "Cris",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEPdiAGM66N_nt5DaYptUPwCzEnLB7M_63Ew&s",
-      telephone: "3103162671",
-      address: "cra5 #4A3",
-      age: "22",
-    },
-  ];
+function getRandomPerson(customArray) {
+  const randomIndex = Math.floor(Math.random() * customArray.length)
+  return customArray[randomIndex]
+}
+
+export default function App() {
+  const [count, setCount] = useState(0)
+  const [persona, setPersona] = useState({})
 
   return (
     <>
-      <div>
-        {students.map((student) => (
-          <Profile
-            name={student.name}
-            img={student.img}
-            telephone={student.telephone}
-            age={student.age}
-            address={student.address}
-          />
-        ))}
+      {/* <div>
         <h1>Nombre: {sebastian.name}</h1>
         <p>Apellido: {sebastian.lastName}</p>
         <p>Edad: {sebastian.age}</p>
-      </div>
-
-      <div>
+      </div> */}
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="#" target="_blank">
-          <img src={ayte} className="logo ayte" alt="ayte logo" />
+        <a href="">
+          <img src={ayteLogo} className="logo ayte" alt="Ayte logo" />
         </a>
-      </div>
-      <h1>Vite + React</h1>
-
+      </div> */}
+      <h1>Uso de useState</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          INCREMENTAR
+          Incrementar
         </button>
-
         <button onClick={() => setCount((count) => count - 1)}>
-          DECREMENTAR
+          Decrementar
         </button>
-        <button onClick={() => setCount(0)}>REINICIAR</button>
+        <button onClick={() => setCount(0)}>
+          Restablecer
+        </button>
+        <p>
+          El valor del contador es: {count}
+        </p>
       </div>
-      <p>El valor del contador: {count}</p>
-
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-
-      <button onClick={() => setPersona(getRamdomPerson(students))}>
-        CAMBIAR INVITADO
+      <button onClick={() => setPersona(getRandomPerson(students))}>
+        Cambiar invitado
       </button>
+      <p className="read-the-docs">
+        Tenemos a la persona invitada de hoy:
+      </p>
+      <Profile
+        name={persona.name}
+        img={persona.img}
+        telephone={persona.telephone}
+        age={persona.age}
+        address={persona.address} />
 
-      <p>La persona invitada: {persona}</p>
+      {/* <ListPeople>
+          {
+            students.map((student) => <Profile
+              name={student.name}
+              img={student.img}
+              telephone={student.telephone}
+              age={student.age}
+              address={student.address} />)
+          }
+        </ListPeople> */}
+
     </>
-  );
+  )
 }
 
-export default App;
+ 1 change: 1 addition & 0 deletions1  
+s

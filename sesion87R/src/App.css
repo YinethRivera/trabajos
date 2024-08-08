@@ -1,8 +1,23 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem; */
+  width: 100%;
   text-align: center;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+}
+
+dody{
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 .logo {
@@ -16,9 +31,6 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-.logo.ayte:hover {
-  filter: drop-shadow(0 0 2em #1900faaa);
 }
 
 @keyframes logo-spin {

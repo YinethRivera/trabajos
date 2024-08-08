@@ -17,9 +17,6 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.logo.ayte:hover {
-  filter: drop-shadow(0 0 2em #1900faaa);
-}
 
 @keyframes logo-spin {
   from {
